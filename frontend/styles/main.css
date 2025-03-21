@@ -1,0 +1,57 @@
+html{
+    margin-top: 0;
+}
+
+body{
+    font-family: 'Public Sans';
+    color: #242424;
+    margin-top: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.background{
+    opacity: 0.2;
+    position: absolute;
+    left: 40vw;
+    top: 30vh;
+    width: 20vw;
+}
+
+
+header{
+    display: flex;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    width: 95vw;
+    height: 10vh;
+    background-color: #F6D600;
+    
+    /*align-content: center;*/
+    justify-content: space-between;
+
+}
+
+button {
+    font-family: 'Public Sans';
+    color: #242424;
+    background-color: #F6D600;
+    border: 0;
+    cursor: pointer;
+}
+
+header, h2{
+    display: flexbox;
+    font-size: 4vw;
+    margin: 0px;
+    align-self: center;
+}
+
+header, a{
+    display: flex;
+}
+
+header, a, img{
+    display: flex;
+}
