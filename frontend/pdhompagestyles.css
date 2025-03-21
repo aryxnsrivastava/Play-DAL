@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffcc00;
+    padding: 15px;
+}
+
+.logo {
+    height: 120px;
+}
+
+.user-menu {
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+
+.user-menu span {
+    margin-left: 5px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-item {
+    padding: 10px;
+    text-align: left;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    cursor: pointer;
+}
+
+.dropdown-item-newpost {
+    padding: 10px;
+    text-align: left;
+    background-color: #1926e1;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #ffcc00;
+    color: white;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.posts {
+    width: 60%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.actions .like-btn:hover, .dislike-btn:hover {
+    color: blue;
+}
