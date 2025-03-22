@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add a Post</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black min-h-screen flex items-center justify-center p-4">
+  <div class="bg-yellow-500 p-8 rounded-2xl shadow-md w-full max-w-xl">
+    <h2 class="text-2xl font-bold mb-6 text-center">Add a New Post</h2>
+
+    <form action="/add-post" method="POST" class="space-y-4">
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Title of the Post</label>
+        <input type="text" name="title" required class="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+      </div>
+
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Location</label>
+        <input type="text" name="location" required class="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+      </div>
+
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Timings</label>
+        <input type="text" name="timings" required class="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="e.g. 4 PM - 6 PM" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Sport</label>
+        <input type="text" name="sport" required class="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+      </div>
+
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Small Description</label>
+        <textarea name="description" rows="3" required class="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+      </div>
+
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Number of Slots</label>
+        <input type="number" name="slots" min="1" required class="mt-1 block w-full p-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" />
+      </div>
+
+
+      <div class="text-center pt-4">
+        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700 transition">
+          Add Post
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
