@@ -1,27 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../models/post'); // Import Post model
+const Post = require('../models/post');
 
-// GET all posts
 router.get('/posts', async (req, res) => {
     try {
-        const posts = await Post.find().populate('author', 'username'); // Populate author details (username)
+        const posts = await Post.find().populate('author', 'username');
         res.json(posts);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 });
 
-// GET a specific post by ID
-router.get('/posts/:id', getPost, (req, res) => { // 'getPost' middleware (defined below)
+router.get('/posts/:id', getPost, (req, res) => {
     res.json(res.post);
 });
 
-// POST a new post
 router.post('/posts', async (req, res) => {
-    // Assuming you'll send authorId, sport, location, date, time, and description in the request body
     const post = new Post({
-        author: req.body.authorId, // For now, assuming you're sending authorId. Later, we'll get it from JWT
+        author: req.body.authorId,
         sport: req.body.sport,
         location: req.body.location,
         date: req.body.date,
@@ -31,14 +27,13 @@ router.post('/posts', async (req, res) => {
 
     try {
         const newPost = await post.save();
-        res.status(201).json(newPost); // 201 Created
+        res.status(201).json(newPost);
     } catch (err) {
-        res.status(400).json({ message: err.message }); // 400 Bad Request
+        res.status(400).json({ message: err.message });
     }
 });
 
-// PATCH/PUT update an existing post
-router.patch('/posts/:id', getPost, async (req, res) => { // PATCH for partial updates
+router.patch('/posts/:id', getPost, async (req, res) => {
     if (req.body.sport != null) {
         res.post.sport = req.body.sport;
     }
@@ -54,7 +49,7 @@ router.patch('/posts/:id', getPost, async (req, res) => { // PATCH for partial u
     if (req.body.description != null) {
         res.post.description = req.body.description;
     }
-    res.post.updatedAt = Date.now(); // Update updatedAt timestamp
+    res.post.updatedAt = Date.now();
 
     try {
         const updatedPost = await res.post.save();
@@ -64,29 +59,28 @@ router.patch('/posts/:id', getPost, async (req, res) => { // PATCH for partial u
     }
 });
 
-// DELETE a post
 router.delete('/posts/:id', getPost, async (req, res) => {
     try {
-        await res.post.remove();
+        await Post.deleteOne({ _id: res.post._id });
+
         res.json({ message: 'Post deleted' });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 });
 
-// Middleware to get a post by ID (reusable for GET, PATCH, DELETE by ID routes)
 async function getPost(req, res, next) {
     let post;
     try {
-        post = await Post.findById(req.params.id).populate('author', 'username'); // Populate author details
+        post = await Post.findById(req.params.id).populate('author', 'username');
         if (post == null) {
-            return res.status(404).json({ message: 'Cannot find post' }); // 404 Not Found
+            return res.status(404).json({ message: 'Cannot find post' });
         }
     } catch (err) {
         return res.status(500).json({ message: err.message });
     }
-    res.post = post; // Store the found post in res.post for the route handler to use
-    next(); // Move to the next middleware or route handler
+    res.post = post;
+    next();
 }
 
 module.exports = router;
