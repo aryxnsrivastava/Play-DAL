@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Play@Dal</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Notable&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img class="background" src="imgs/dalTiger.png">
+    <header>
+        <a href="index.html"><img src="imgs/dalLogo.png" alt="Dalhousie University Logo"></a>
+        <button onclick="document.location='index.html'"><h2><b>PLAY</b>@<b>DAL</b></h2></button>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-card">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="major">Major (Optional):</label>
+                    <input type="text" id="major" name="major">
+                </div>
+                <div class="form-group">
+                    <label for="favouriteSport">Favourite Sport (Optional):</label>
+                    <input type="text" id="favouriteSport" name="favouriteSport">
+                </div>
+                <button type="submit" class="auth-button">Register</button>
+            </form>
+            <p class="auth-link">Already have an account? <a href="login.html">Login here</a></p>
+        </div>
+    </main>
+</body>
+</html>

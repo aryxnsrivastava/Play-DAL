@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play@Dal Homepage</title>
+    <link rel="stylesheet" href="pdhompagestyles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <img src="tiger-logo.png" alt="Dalhousie University Logo" class="logo">
+            <h1>PLAY@DAL</h1>
+            <div class="user-menu" onclick="toggleDropdown()">
+                USERNAME <span>▼</span>
+                <div class="dropdown" id="userDropdown">
+                    <a href="addPost.html" class="dropdown-item-newpost">MAKE A POST</a>
+                    <a href="profile.html" class="dropdown-item">PROFILE</a>
+                    <a href="login.html"><button><h2>LOGIN</h2></button></a>
+                </div>
+            </div>
+    </header>
+
+    <main id="posts-container">
+
+    </main>
+
+    <script src="pdhomepagescript.js"></script>
+</body>
+</html>
